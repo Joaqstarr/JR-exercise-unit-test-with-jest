@@ -11,11 +11,24 @@ function fromEuroToDollar(euros){
     return valueInDollar;
 }
 
+function fromEuroToYen(euro){
+    return euro * 156.5;
+}
+function fromDollarToEuro(dollar){
+    return dollar/1.07;
+}
+
+function fromEuroToPound(euro){
+    return euro * 0.87;
+}
+function fromYenToEuro(yen){
+    return yen/156.5;
+}
 function fromYenToPound(yen){
-    return yen/180;
+    return fromEuroToPound(fromYenToEuro(yen));
 }
 function fromDollarToYen(dollars){
-    return dollars * 146.25;
+    return fromEuroToYen(fromDollarToEuro(dollars));
 }
 
 // Export the function to be used on other files 
